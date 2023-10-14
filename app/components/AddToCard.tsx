@@ -2,7 +2,11 @@
 import React from "react";
 
 const AddToCard = () => {
-  return <button onClick={() => console.log("Click")}>Add to Card</button>;
+  return (
+    <button className="btn btn-primary" onClick={() => console.log("Click")}>
+      Add to Card
+    </button>
+  );
 };
 
 export default AddToCard;
