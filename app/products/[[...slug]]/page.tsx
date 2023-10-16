@@ -1,12 +1,14 @@
 import React from "react";
 interface Props {
   params: { slug: string[] };
+  searchParams: { OrderBy: string };
 }
 
-const page = ({ params: { slug } }: Props) => {
+const page = ({ params: { slug }, searchParams: { OrderBy } }: Props) => {
   return (
     <div>
       Product Page
+      <div>{OrderBy}</div>
       {slug && (
         <ul>
           {slug.map((s) => (
