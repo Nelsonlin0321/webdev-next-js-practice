@@ -5,7 +5,7 @@ const GoogleAnalyticsScript = () => {
   return (
     <>
       <Script async src="https://www.googletagmanager.com/gtag/js?id=TAG_ID" />
-      <Script>
+      <Script id="Google-Analytics">
         {/* parse it to be a javascript codes */}
         {`window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
