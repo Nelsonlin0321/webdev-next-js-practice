@@ -9,7 +9,7 @@ import bcrypt from 'bcrypt';
 export const authOptions:NextAuthOptions = {
   providers: [
     CredentialsProvider({
-      name: "Your Email and Password",
+      name: "your email",
       credentials: {
         email: { label: "Email", type: "email"},
         password: { label: "Password", type: "password" }
@@ -20,7 +20,7 @@ export const authOptions:NextAuthOptions = {
         const user = await prisma.user.findUnique(
           { where: { email: credentials.email } });
         if (!user) return null;
-
+            
         const passwordMatched = await bcrypt.compare(credentials.password,user.hashedPassword!)
         
         return passwordMatched ? user : null;
