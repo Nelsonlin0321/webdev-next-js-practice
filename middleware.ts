@@ -12,5 +12,5 @@ export const config = {
     // *: zero or more: /users/:id*
     // +: one ore more
     // ?: zero or one
-    matcher: ['/users/:id*']
+    matcher: ['/users/:path*']
 }
