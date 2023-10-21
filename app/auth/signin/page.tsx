@@ -5,7 +5,7 @@ import type {
 import { getProviders, signIn } from "next-auth/react";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import ProviderButton from "../providerButton";
+import ProviderButton from "../ProviderButton";
 
 export default async function SignIn() {
   const providers = authOptions.providers;
