@@ -5,16 +5,17 @@ import { getServerSession } from "next-auth";
 import banner from "@/public/images/BANNER-IMAGE-13.jpg";
 import Image from "next/image";
 import { Metadata } from "next";
-
+import HeavyComponent from "./components/HeavyComponent";
+import { useState } from "react";
 export default async function Home() {
   const session = await getServerSession(authOptions);
+
   return (
     <main className="relative h-screen">
       <h1 className="font-poppins">
         Hello {session && <span>{session.user!.name}</span>}
       </h1>
-      <Link href="/users">Users</Link>
-      <ProductCard />
+      <HeavyComponent />
       {/* <Image
         src="https://bit.ly/react-cover"
         alt="banner"
@@ -36,10 +37,10 @@ export default async function Home() {
 //   description: "...",
 // };
 
-export async function generateMetadata(): Promise<Metadata> {
-  const product = await fetch("");
-  return {
-    title: "product.name",
-    description: "",
-  };
-}
+// export async function generateMetadata(): Promise<Metadata> {
+//   const product = await fetch("");
+//   return {
+//     title: "product.name",
+//     description: "",
+//   };
+// }
