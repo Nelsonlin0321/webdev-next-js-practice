@@ -36,15 +36,10 @@ export const authOptions:NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
   session: {
     strategy:'jwt'
+  },
+  pages: {
+    signIn: '/auth/signin'
   }
-  // session: {
-  //   strategy: "database",
-  //   maxAge: 30 * 24 * 60 * 60, // 30 days
-  //   updateAge: 24 * 60 * 60, // 24 hours
-  //   generateSessionToken: () => {
-  //     return randomUUID?.() ?? randomBytes(32).toString("hex")
-  // }
-  // }
 } 
 
 const handler = NextAuth(authOptions)
