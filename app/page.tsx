@@ -4,6 +4,7 @@ import { authOptions } from "./api/auth/[...nextauth]/route";
 import { getServerSession } from "next-auth";
 import banner from "@/public/images/BANNER-IMAGE-13.jpg";
 import Image from "next/image";
+import { Metadata } from "next";
 
 export default async function Home() {
   const session = await getServerSession(authOptions);
@@ -28,4 +29,17 @@ export default async function Home() {
       ></Image> */}
     </main>
   );
+}
+
+// export const metadata: Metadata = {
+//   title: "...",
+//   description: "...",
+// };
+
+export async function generateMetadata(): Promise<Metadata> {
+  const product = await fetch("");
+  return {
+    title: "product.name",
+    description: "",
+  };
 }
